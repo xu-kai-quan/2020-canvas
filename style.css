@@ -3,6 +3,7 @@ body{
 }
 #canvas{
     background: #cccccc;
+    vertical-align: top;/*解决了一个bug，该bug导致在手机端的下面会多出来一小部分无用的区域*/
 }
 .actions{
     position: fixed;
