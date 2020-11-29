@@ -1,3 +1,7 @@
+// document.body.ontouchstart = function(a){
+//     a.preventDefault()//禁止滚动
+// } //起冲突了
+
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
