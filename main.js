@@ -5,14 +5,46 @@ listenToUser(canvas);
 
 
 var eraserEnable = false;
-eraser.onclick = function () {
-    eraserEnable = true;
-    actions.className = "actions x"
-}
-brush.onclick = function () {
+brush.onclick = function(){
     eraserEnable = false;
-    actions.className = "actions"
+    brush.classList.add('active')
+    eraser.classList.remove('active')
 }
+eraser.onclick = function(){
+    eraserEnable = true;
+    eraser.classList.add('active')
+    brush.classList.remove('active')
+}
+
+black.onclick = function(){
+    context.strokeStyle = 'black';
+    black.classList.add('active')
+    red.classList.remove('active')
+    green.classList.remove('active')
+    blue.classList.remove('active')
+}
+red.onclick = function(){
+    context.strokeStyle = 'red';
+    black.classList.remove('active')
+    red.classList.add('active')
+    green.classList.remove('active')
+    blue.classList.remove('active')
+}
+green.onclick = function(){
+    context.strokeStyle = 'green';
+    black.classList.remove('active')
+    red.classList.remove('active')
+    green.classList.add('active')
+    blue.classList.remove('active')
+}
+blue.onclick = function(){
+    context.strokeStyle = 'blue';
+    black.classList.remove('active')
+    red.classList.remove('active')
+    green.classList.remove('active')
+    blue.classList.add('active')
+}
+
 /**********/
 function autoSetCanvasSize(canvas) {
     setCanvasSize();

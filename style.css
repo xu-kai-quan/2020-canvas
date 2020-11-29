@@ -1,21 +1,63 @@
+ul,ol{
+    list-style: none;
+}
+*{
+    margin: 0;padding: 0;
+}
+.icon {
+    width: 1.5em; height: 1.5em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
 body{
-    margin: 0;
+    overflow: hidden;/*在手机浏览器上滑动页面会动*/
 }
 #canvas{
-    background: #cccccc;
+    background: white;
     vertical-align: top;/*解决了一个bug，该bug导致在手机端的下面会多出来一小部分无用的区域*/
 }
 .actions{
     position: fixed;
     left: 0;
-    bottom: 0;
+    top: 0;
+    padding: 20px;
 }
-.actions > #brush{
-    display: none;
+.actions svg{
+    transition: all 0.3s;
+    margin: 0 10px;
 }
-.actions.x >#brush{
-    display: inline-block;
+.actions svg.active{
+    fill: red;
+    transform: scale(1.2);
+
 }
-.actions.x >#eraser{
-    display: none;
+.colors{
+    position: fixed;
+    top: 50px;
+    left: 10px;
+}
+.colors li{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s;
+}
+.colors li.black{
+    background: black;
+}
+.colors li.red{
+    background: red;
+}
+.colors li.green{
+    background: green;
+}
+.colors li.blue{
+    background: blue;
+}
+.colors li.active{
+    transform: scale(1.2);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
 }
